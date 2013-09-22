@@ -37,3 +37,4 @@ nosetests.xml
 # app
 **/.DS_Store
 .DS_Store
+auth_code.txt
