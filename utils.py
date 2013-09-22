@@ -1,6 +1,6 @@
 import hmac, base64, struct, hashlib, time
 import os, re
-
+import pyperclip
 
 def get_hotp_token(secret, intervals_no):
     key = base64.b32decode(secret, True)
@@ -17,5 +17,7 @@ def get_totp_token(secret):
 
 
 if __name__ == '__main__':
-    print get_totp_token('IAYRQWOHHGDFVN7B')
-    raw_input('Press any key to continue')
+    token = get_totp_token('IAYRQWOHHGDFVN7B')
+    # raw_input('Press any key to continue')
+    pyperclip.copy(token)
+    print token
