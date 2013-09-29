@@ -16,8 +16,9 @@ def get_totp_token(secret):
         ).zfill(6)
 
 if __name__ == '__main__':
+    pwd = os.path.split(os.path.realpath(__file__))[0]
     auth_code = ''
-    with open('./auth_code.txt') as auth_txt:
+    with open(os.path.join(pwd, './auth_code.txt')) as auth_txt:
         auth_code = auth_txt.read().strip()
         print auth_code
     token = get_totp_token(auth_code)
